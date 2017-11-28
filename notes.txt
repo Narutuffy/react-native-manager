@@ -1,0 +1,35 @@
+In this app basically Redux will take charge of all the data and not component.
+For complexity and complex apps redux is the way
+Named export is used to export different items.
+Common error that import an item with a spelling mistake but the stack doesn't give you any error hence it si difficult to catch this type of error.
+You need to create new state and not mutate it every time because redux/react dont understand mutation at they will think state is still the same. Hence we create new object so that they realise it is changed and re-render or carry out some function.
+All these redux thunnk and redux-promis is to make async request.
+Redux thunk is used to handle anyknid of asynchronous action creators or long process taking functions.
+We have routers for reactjs navigation but no go to react native navigation is available.
+We can do scene nesting(Scene Bucket) to separate different app flows.
+key interpolation in ES6:
+    return { ...state, [action.payload.prop]: action.payload.value }
+    //Here that is not an array it converts into a key acording to the VALUE PROVIDE INSIDE of it and its value is whatever on the right side of the colons
+    It is same as saying, const newState = {};
+        newState[action.payload.prop] action.payload.value
+        return { ...state, ...newState };
+
+In a primitve tag like View styles can take array and the element right of the array can override elements to the left of the array
+
+Firebase Security notes:
+{
+  "rules": {
+    "users": {
+      "$uid": {
+        ".read": "$uid === auth.uid",
+          ".write": "$uid === auth.uid"
+      }
+    }
+  }
+}
+
+When we are fetching data from firebase, it will automatically watch it for the entire session whenever data is changed in the database.
+
+REducers genrally have a requirement to work with objects, firebase here too return object instead of list (which is an array). It is generally preferred to have objects with key as id in properties as when you want to update them you can easily
+override the value for that key as it is an object. For ex:
+    return { ...state, [id]: action.payload }
